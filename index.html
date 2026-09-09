@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namrata Nandi — Public Policy &amp; Governance Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#E7EAEA;
+--paper-dark:#DBE0DF;
+--ink:#16233B;
+--ink-soft:#3D4C5E;
+--ribbon:#2F5233;
+--ribbon-dark:#213B25;
+--gold:#6B7280;
+--line:#C2C9C8;
+--rule-width:1.5px;
+--max:840px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+background:var(--paper);
+color:var(--ink);
+font-family:'Source Serif 4', serif;
+font-size:17px;
+line-height:1.6;
+position:relative;
+overflow-x:hidden;
+}
+body::before{
+content:"";
+position:fixed;
+top:0; left:0; bottom:0;
+width:14px;
+background:linear-gradient(180deg, var(--ribbon) 0%, var(--ribbon-dark) 100%);
+box-shadow: 2px 0 6px rgba(20,30,25,0.18);
+z-index:5;
+}
+body::after{
+content:"";
+position:fixed;
+top:0; left:14px; bottom:0;
+width:4px;
+background:repeating-linear-gradient(180deg, rgba(0,0,0,0.08) 0 2px, transparent 2px 14px);
+z-index:5;
+}
+@media (max-width:680px){
+body::before{width:8px;}
+body::after{left:8px; width:2px;}
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 28px 120px 48px;}
+@media (max-width:680px){ .wrap{padding:0 20px 90px 28px;} }
+
+header.cover{
+padding:70px 0 46px;
+position:relative;
+}
+.seal{
+width:88px; height:88px;
+border:2px solid var(--ribbon);
+border-radius:50%;
+display:flex; align-items:center; justify-content:center;
+font-family:'Fraunces', serif;
+font-weight:700;
+font-size:28px;
+color:var(--ribbon);
+letter-spacing:1px;
+position:relative;
+margin-bottom:28px;
+background:
+radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%),
+var(--paper);
+}
+.seal::before{
+content:"";
+position:absolute;
+inset:-8px;
+border:1px dashed var(--gold);
+border-radius:50%;
+opacity:0.6;
+}
+.eyebrow{
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--ribbon-dark);
+margin-bottom:10px;
+}
+h1.name{
+font-family:'Fraunces', serif;
+font-weight:600;
+font-size:clamp(38px, 6vw, 58px);
+line-height:1.05;
+color:var(--ink);
+letter-spacing:-0.01em;
+}
+.role{
+font-family:'Source Serif 4', serif;
+font-style:italic;
+font-size:19px;
+color:var(--ink-soft);
+margin-top:10px;
+max-width:520px;
+}
+.contact-line{
+margin-top:26px;
+font-family:'IBM Plex Mono', monospace;
+font-size:13px;
+color:var(--ink-soft);
+display:flex;
+flex-wrap:wrap;
+gap:6px 14px;
+}
+.contact-line a{color:var(--ribbon-dark); text-decoration:none; border-bottom:1px solid var(--ribbon-dark);}
+.contact-line a:hover{color:var(--ribbon);}
+.contact-line span.sep{color:var(--line);}
+
+section.schedule{
+margin-top:64px;
+position:relative;
+}
+.schedule-title{
+font-family:'Fraunces', serif;
+font-weight:600;
+font-size:24px;
+color:var(--ink);
+}
+
+.summary-text{
+font-size:18px;
+color:var(--ink-soft);
+max-width:640px;
+}
+
+.entry{ margin-bottom:34px; }
+.entry:last-child{ margin-bottom:0; }
+.entry-head{
+display:flex;
+justify-content:space-between;
+align-items:baseline;
+flex-wrap:wrap;
+gap:6px 16px;
+margin-bottom:6px;
+}
+.entry-title{
+font-family:'Fraunces', serif;
+font-weight:600;
+font-size:19px;
+}
+.entry-org{
+font-style:italic;
+color:var(--ink-soft);
+font-size:16px;
+}
+.entry-date{
+font-family:'IBM Plex Mono', monospace;
+font-size:12.5px;
+color:var(--gold);
+white-space:nowrap;
+}
+ul.clauses{ list-style:none; margin-top:12px; }
+ul.clauses li{
+position:relative;
+padding-left:22px;
+margin-bottom:10px;
+color:var(--ink-soft);
+font-size:16px;
+}
+ul.clauses li::before{
+content:"§";
+position:absolute;
+left:0;
+color:var(--ribbon);
+font-family:'IBM Plex Mono', monospace;
+font-weight:600;
+}
+ul.clauses li strong{ color:var(--ink); font-weight:600; }
+
+.skills-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px 40px;
+}
+@media (max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
+.skill-block h4{
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+letter-spacing:0.1em;
+text-transform:uppercase;
+color:var(--ribbon-dark);
+margin-bottom:8px;
+}
+.skill-block p{ color:var(--ink-soft); font-size:15px; line-height:1.65; }
+
+.project-card{
+border:1px solid var(--line);
+background:var(--paper-dark);
+border-radius:3px;
+padding:20px 22px;
+margin-bottom:16px;
+position:relative;
+}
+.project-card::before{
+content:"EXHIBIT";
+position:absolute;
+top:-9px; left:18px;
+background:var(--paper);
+padding:0 8px;
+font-family:'IBM Plex Mono', monospace;
+font-size:10px;
+letter-spacing:0.12em;
+color:var(--gold);
+}
+.project-title{
+font-family:'Fraunces', serif;
+font-weight:600;
+font-size:18px;
+margin-bottom:6px;
+}
+.project-desc{ color:var(--ink-soft); font-size:15.5px; margin-bottom:10px; }
+.project-link{
+font-family:'IBM Plex Mono', monospace;
+font-size:12.5px;
+color:var(--ribbon-dark);
+text-decoration:none;
+border-bottom:1px solid var(--ribbon-dark);
+}
+.project-link:hover{ color:var(--ribbon); }
+.pubs-subhead{
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+letter-spacing:0.1em;
+text-transform:uppercase;
+color:var(--ribbon-dark);
+margin:26px 0 12px;
+}
+
+footer{
+margin-top:80px;
+padding-top:24px;
+border-top:var(--rule-width) solid var(--ink);
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+color:var(--ink-soft);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:8px;
+}
+footer a{ color:var(--ribbon-dark); text-decoration:none; border-bottom:1px solid var(--ribbon-dark); }
+@media (prefers-reduced-motion:no-preference){
+.fade-up{
+opacity:0;
+transform:translateY(14px);
+animation:fadeUp 0.7s ease forwards;
+}
+}
+@keyframes fadeUp{ to{ opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover fade-up">
+<div class="seal">NN</div>
+<div class="eyebrow">Portfolio &middot; Public Policy &amp; Governance Research</div>
+<h1 class="name">Namrata Nandi</h1>
+<p class="role">Policy and research professional with experience in government programme implementation, regulatory analysis and public-sector data. Trained in Economics and Data Science, with expertise in quantitative analysis, policy research and stakeholder engagement.</p>
+<div class="contact-line">
+<a href="mailto:namrata.nanditina@gmail.com">namrata.nanditina@gmail.com</a>
+<span class="sep">/</span>
+<a href="https://linkedin.com/in/namrata-nandi" target="_blank" rel="noopener">LinkedIn</a>
+<span class="sep">/</span>
+<span>Guwahati, Assam</span>
+</div>
+</header>
+
+<section class="schedule fade-up">
+<h2 class="schedule-title" style="border-bottom:var(--rule-width) solid var(--ink); padding-bottom:10px;">About</h2>
+<p class="summary-text" style="margin-top:22px;">I work at the intersection of governance and research. Most recently, I served as a Labour Inspector (Gazetted) under the Government of Assam, where I handled regulatory compliance, welfare-scheme data systems, and multi-agency coordination for programmes reaching thousands of workers across the district, where I was posted in.</p>
+<p class="summary-text" style="margin-top:14px;">I hold a B.A. in Economics &mdash; where I graduated as Chancellor's Gold Medalist &mdash; and a postgraduate degree in Data Science from IIIT Bangalore. I'm now applying that combination of quantitative training and on-the-ground governance experience to public policy and evidence-based research.</p>
+</section>
+
+<section class="schedule fade-up">
+<h2 class="schedule-title" style="border-bottom:var(--rule-width) solid var(--ink); padding-bottom:10px; margin-bottom:22px;">Policy Research Samples</h2>
+
+<div class="project-card">
+<div class="project-title">Sustained Employment Generation for Rural Women</div>
+<div class="project-desc">An integrated Theory of Change framework for livelihoods, inclusion, and growth outcomes among rural women.</div>
+<a class="project-link" href="https://github.com/NamrataNandi/Policy-Research-Samples/blob/main/Sustained_Employment_Generation_for_Rural_Women_upload.pdf" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+
+<div class="project-card">
+<div class="project-title">Urban Youth Employment and Skill Development in India</div>
+<div class="project-desc">A thematic literature synthesis on youth employment, employability, skill development, and labour-market outcomes in India.</div>
+<a class="project-link" href="https://github.com/NamrataNandi/Policy-Research-Samples/blob/main/Literature%20Synthesis_Urban%20youth%20employment%20and%20skilling.pdf" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+
+<div class="project-card">
+<div class="project-title">Digital Public Infrastructure and Inclusion in India: Are We Bridging or Widening the Gap?</div>
+<div class="project-desc">A literature synthesis examining India's DPI ecosystem, digital inclusion, and emerging policy priorities.</div>
+<a class="project-link" href="https://github.com/NamrataNandi/Policy-Research-Samples/blob/main/Literature%20Synthesis%20(India%20DPI)_final.pdf" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+
+</section>
+
+<section class="schedule fade-up">
+<h2 class="schedule-title" style="border-bottom:var(--rule-width) solid var(--ink); padding-bottom:10px; margin-bottom:22px;">Data &amp; Quantitative Analysis</h2>
+
+<div class="project-card">
+<div class="project-title">The Female LFPR Puzzle: Explaining India's Gender Gap in Labour Force Participation</div>
+<div class="project-desc">State-level analysis of India's female LFPR gap using PLFS 2025 and RBI Handbook data &mdash; regression analysis linking female literacy and per-capita income to LFPR outcomes across Indian states.</div>
+<a class="project-link" href="https://nbviewer.org/github/NamrataNandi/FEMALE-LFPR-ANALYSIS/blob/main/PLFS_ANALYSIS_.ipynb" target="_blank" rel="noopener">View analysis (notebook) &rarr;</a><br>
+<a class="project-link" href="https://github.com/NamrataNandi/FEMALE-LFPR-ANALYSIS/blob/main/The%20Female%20LFPR%20Puzzle.pdf" target="_blank" rel="noopener">View findings (deck) &rarr;</a>
+</div>
+
+<div class="project-card">
+<div class="project-title">Loan Default Risk Analysis</div>
+<div class="project-desc">Analysed applicant data using regression analysis to identify key default-risk indicators and inform evidence-based lending decisions.</div>
+<a class="project-link" href="https://nbviewer.org/github/NamrataNandi/LOAN_DEFAULT_RISK_EDA" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+
+</section>
+
+<section class="schedule fade-up">
+<h2 class="schedule-title" style="border-bottom:var(--rule-width) solid var(--ink); padding-bottom:10px; margin-bottom:22px;">Publications</h2>
+
+<div class="project-card">
+<div class="project-title">Impact of COVID-19 on Assam's Education Sector</div>
+<div class="project-desc">2021 &middot; Secondary research and literature synthesis assessing disruptions to education access.</div>
+<a class="project-link" href="https://www.ijrar.org/papers/IJRARJFM1257.pdf" target="_blank" rel="noopener">Read paper &rarr;</a>
+</div>
+
+<div class="project-card">
+<div class="project-title">Socio-Economic Status of Unorganised Women Labourers in Assam</div>
+<div class="project-desc">2021 &middot; Analysis of socioeconomic conditions of women workers in Assam's informal sector.</div>
+<a class="project-link" href="https://www.ijaresm.com/uploaded_files/document_file/Namrata_Nandie47b.pdf" target="_blank" rel="noopener">Read paper &rarr;</a>
+</div>
+
+</section>
+
+<footer>
+<span>&copy; 2026 Namrata Nandi</span>
+<span><a href="mailto:namrata.nanditina@gmail.com">Get in touch</a></span>
+</footer>
+
+</div>
+</body>
+</html>
